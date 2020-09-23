@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Reubro_Json2</string>
+
+    <array name="arr">
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+
+    </array>
 </resources>

@@ -20,16 +20,16 @@ import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
-    String      status,message,userid,title,name, mail,dob,phone,contry,imag;
+    String      status[],message,userid,title,name, mail,dob,phone,contry,imag;
 
     Context context;
 
-    public MyAdapter(Context ct,String jstatus,String jmessage,String juserid,String jtitle,String jname,String  jmail,String jdob,String jphone,String jcontry,String jimg){
+    public MyAdapter(Context ct,String jstatus[]){//,String jmessage,String juserid,String jtitle,String jname,String  jmail,String jdob,String jphone,String jcontry,String jimg){
 
 
         context=ct;
         status=jstatus;
-        message=jmessage;
+      /*  message=jmessage;
         userid=juserid;
         title=jtitle;
         name=jname;
@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         imag=jimg;
 
         // images=image;
-
+*/
     }
 
     @NonNull
@@ -54,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
-        holder.mytext1.setText(status);
+        holder.mytext1.setText(status[i]);
         holder.mytext2.setText(message);
         holder.mytext3.setText(userid);
         holder.mytext4.setText(title);
@@ -70,7 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 3;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
