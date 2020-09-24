@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     MyAdapter myAdapter;
     String s1,s2;
     RecyclerView recyclerView;
-    String strJson = "{\"JSON\":{\"status\":\"success\",\"message\":\"Login Success\",\"data\":[{\"user_id\":\"354sd4\",\"user_name\":\"Gilson Gilbert\",\"email_id\":\"gilson @gmail.com\",\"profile_pic\":\"< image_url >\"},{\"user_id\":\"3544354\",\"user_name\":\"Arjun\",\"email_id\":\"arjun@gmail.com\",\"profile_pic\":\"< image_url >\"},{\"user_id\":\"3544354\",\"user_name\":\"Arun\",\"email_id\":\"arun@gmail.com\",\"profile_pic\":\"< image_url >\"}]}}";
-    String jstatus,jmessage,juserid,jtitle,jname, jmail,jdob,jphone,jcontry,jimag;
+    String strJson = "{\"JSON\":{\"status\":\"success\",\"message\":\"Login Success\",\"data\":[{\"user_id\":\"354sd4\",\"user_name\":\"Gilson Gilbert\",\"email_id\":\"gilson @gmail.com\",\"profile_pic\":\"https://picsum.photos/200/300\"},{\"user_id\":\"3544354\",\"user_name\":\"Arjun\",\"email_id\":\"arjun@gmail.com\",\"profile_pic\":\"https://picsum.photos/200/300\"},{\"user_id\":\"3544354\",\"user_name\":\"Arun\",\"email_id\":\"arun@gmail.com\",\"profile_pic\":\"https://picsum.photos/200/300\"}]}}";
+    String jstatus[],jmessage[],juserid[],jtitle,jname[], jmail[],jdob,jphone,jcontry,jimag[];
     String jdata[];
 
     String jsonstring[];
@@ -43,22 +43,28 @@ public class MainActivity extends AppCompatActivity {
             //Get the instance of JSONArray that contains JSONObjects
             JSONArray jsonArray = jmain.optJSONArray("data");
 
-
-           jdata =getResources().getStringArray(R.array.arr);
+            jstatus=getResources().getStringArray(R.array.jastatus);
+            jmessage=getResources().getStringArray(R.array.jamessage);
+            juserid = getResources().getStringArray(R.array.jauserid);
+            jname =getResources().getStringArray(R.array.janame);
+            jmail= getResources().getStringArray(R.array.jamail);
+            jimag=getResources().getStringArray(R.array.img);
+         //  jdata =getResources().getStringArray(R.array.arr);
             //Iterate the jsonArray and print the info of JSONObjects
             for(int i=0; i < jsonArray.length(); i++){
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
 
 
-                jstatus=jmain.getString("status");
-                jmessage=jmain.getString("message");
-                juserid = jsonObject.getString("user_id");
-                jname = jsonObject.getString("user_name");
-                jmail= jsonObject.getString("email_id");
+                jstatus[i]=jmain.getString("status");
+                jmessage[i]=jmain.getString("message");
+                juserid[i] = jsonObject.getString("user_id");
+                jname[i] = jsonObject.getString("user_name");
+                jmail[i]= jsonObject.getString("email_id");
+                jimag[i]=jsonObject.getString("profile_pic");
 
 
-               jdata[i]=jstatus+"\n"+jmessage+"\n"+juserid+"\n"+jname+"\n"+jmail+"\n";
+             //  jdata[i]=jstatus+"\n"+jmessage+"\n"+juserid+"\n"+jname+"\n"+jmail+"\n";
 
 
             }
@@ -86,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        MyAdapter myAdapter =new MyAdapter(this,jdata);
+        MyAdapter myAdapter =new MyAdapter(this,jstatus,jmessage,juserid,jname,jmail,jimag);
 
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

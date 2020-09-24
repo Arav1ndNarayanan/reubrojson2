@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Reubro_Json2</string>
 
-    <array name="arr">
+    <array name="jastatus">
         <item>x</item>
         <item>x</item>
         <item>x</item>
@@ -10,4 +10,52 @@
         <item>x</item>
 
     </array>
+    <array name="jamessage">
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+
+    </array>
+<array name="jauserid">
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+
+</array>
+
+<array name="janame">
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+
+</array>
+
+<array name="jamail">
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+<item>x</item>
+
+</array>
+    <array name="img">
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+        <item>x</item>
+
+    </array>
+
 </resources>
